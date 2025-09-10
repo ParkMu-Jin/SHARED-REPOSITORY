@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXIFOX PROJECT90</title>
+    <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #dfdfdf;
+    scroll-behavior: smooth;
+    background-image:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(139, 90, 157, 0.1) 100%),
+        radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.zprincipal {
+    margin-top: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.zseccion-hero {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.ztitulo-principal {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.zcontenedor-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+}
+
+.zfila-arriba,
+.zfila-abajo {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    align-items: center;
+}
+
+.zgrupo-miembro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.zgrupo-miembro.zderecha {
+    flex-direction: row-reverse;
+}
+
+.zboton1,
+.zboton2,
+.zboton3,
+.zboton4 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.zboton1 { border-radius: 90px 5px 5px 5px; }
+.zboton2 { border-radius: 5px 90px 5px 5px; }
+.zboton3 { border-radius: 5px 5px 5px 90px; }
+.zboton4 { border-radius: 5px 5px 90px 5px; }
+
+.zicono {
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.zboton1 .zicono { color: #e74c3c; }
+.zboton2 .zicono { color: #f39c12; }
+.zboton3 .zicono { color: #2ecc71; }
+.zboton4 .zicono { color: #3498db; }
+
+.zboton1:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #e74c3c;
+}
+.zboton1:hover .zicono-usuario { color: white; }
+
+.zboton2:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #f39c12;
+}
+.zboton2:hover .zicono-usuario { color: white; }
+
+.zboton3:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #2ecc71;
+}
+.zboton3:hover .zicono-usuario { color: white; }
+
+.zboton4:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #3498db;
+}
+.zboton4:hover .zicono-usuario { color: white; }
+
+.zetiqueta-nombre {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: #ffffff;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    border: 2px solid;
+    font-size: 0.95em;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.zetiqueta-aldhair {
+    border-color: #e74c3c;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
+}
+.zetiqueta-kelvin {
+    border-color: #f39c12;
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.3);
+}
+.zetiqueta-jose {
+    border-color: #2ecc71;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+}
+.zetiqueta-david {
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+}
+
+@media (max-width: 768px) {
+    .ztitulo-principal {
+        font-size: 2.5em;
+    }
+    .zfila-arriba,
+    .zfila-abajo {
+        flex-direction: column;
+        gap: 2em;
+    }
+    .zgrupo-miembro {
+        flex-direction: column !important;
+        gap: 15px;
+        text-align: center;
+    }
+    .zcontenedor-principal {
+        gap: 1.5em;
+    }
+}
+</style>
+
+</head>
+<body>
+    <main class="zprincipal">
+        <section class="zseccion-hero">
+            <h1 class="ztitulo-principal">GRUPO 3</h1>
+        </section>
+
+        <div class="zcontenedor-principal">
+            <div class="zfila-arriba">
+                <div class="zgrupo-miembro">
+                    <a href="ALDHAIR.html" class="zboton1" target="_blank">
+                        <div class="zicono">🦊</div>
+                    </a>
+                    <div class="zetiqueta-nombre zetiqueta-aldhair">ALDHAIR RODRIGUEZ</div>
+                </div>
+                <div class="zgrupo-miembro zderecha">
+                    <a href="kelvinatencion.html" class="zboton2" target="_blank">
+                        <div class="zicono">👤</div>
+                    </a>
+                    <div class="zetiqueta-nombre zetiqueta-kelvin">KELVIN ATENCIO</div>
+                </div>
+            </div>
+            <div class="zfila-abajo">
+                <div class="zgrupo-miembro">
+                    <a href="josematos.html" class="zboton3" target="_blank">
+                        <div class="zicono">👤</div>
+                    </a>
+                    <div class="zetiqueta-nombre zetiqueta-jose">JOSÉ MATOS</div>
+                </div>
+                <div class="zgrupo-miembro zderecha">
+                    <a href="LINK REPOSITORIO" class="zboton4" target="_blank">
+                        <div class="zicono">👤</div>
+                    </a>
+                    <div class="zetiqueta-nombre zetiqueta-david">DAVID CALDERON</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.zprincipal');
+            const speed = scrolled * 0.1;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+    </script>
+</body>
+</html>
