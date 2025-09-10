@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldhair Rodriguez Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .ixicentral {
+            position: relative;
+            width: 40vmin;
+            height: 40vmin;
+            background: linear-gradient(135deg, #1e1e24 10%, #050505 60%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            animation: gradient-shift 5s ease-in-out infinite;
+            background-size: 200% 200%;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .ixicentral .ixiimage {
+            width: 25vmin;
+            height: 25vmin;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1vmin;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .ixicentral .ixititle {
+            font-size: 3vmin;
+            color: white;
+            background-image: linear-gradient(to right, #626262, #fff);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1vmin;
+        }
+
+        .ixicentral::before,
+        .ixicentral::after {
+            --size: 5px;
+            content: "";
+            position: absolute;
+            top: calc(var(--size) / -2);
+            left: calc(var(--size) / -2);
+            width: calc(100% + var(--size));
+            height: calc(100% + var(--size));
+            background: radial-gradient(circle at 0 0, hsl(27deg 93% 60%), transparent),
+                radial-gradient(circle at 100% 0, #00a6ff, transparent),
+                radial-gradient(circle at 0 100%, #ff0056, transparent),
+                radial-gradient(circle at 100% 100%, #6500ff, transparent);
+            border-radius: 15px;
+        }
+
+        .ixicentral::after {
+            --size: 2px;
+            z-index: -1;
+        }
+
+        .ixicentral::before {
+            --size: 10px;
+            z-index: -2;
+            filter: blur(2vmin);
+            animation: blur-animation 3s ease-in-out alternate infinite;
+        }
+
+        @keyframes blur-animation {
+            to {
+                filter: blur(3vmin);
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ixicentral">
+        <img src="https://i.pinimg.com/736x/4f/a2/04/4fa2043446f59bffebbe850032ed5670.jpg" alt="Aldhair Rodriguez" class="ixiimage">
+        <div class="ixititle">Aldhair Rodriguez</div>
+    </div>
+</body>
+</html>
